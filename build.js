@@ -230,7 +230,7 @@ function foot(l, page, T) {
   const home = rel(from, l, 'home');
   const all = order.map((x) => `<a href="${rel(from, x, page)}" hreflang="${x}" lang="${x}" data-l="${x}"${x === l ? ' class="on"' : ''}>${esc(dicts[x].lang_name)}</a>`).join('');
   return `<footer><div class="w">
-<div class="ft"><a class="brand" href="${home}">${LOGO}AdSpot</a><nav><a href="${BOT}">@PostOnAdSpotBot</a><a href="${CHANNEL}">@adspotchannel</a><a href="${rel(from, l, 'partners')}">${esc(T.nav_partners)}</a><a href="https://github.com/jeremstyke/adspot">GitHub</a></nav></div>
+<div class="ft"><a class="brand" href="${home}">${LOGO}AdSpot</a><nav><a href="${BOT}">@PostOnAdSpotBot</a><a href="${CHANNEL}">@adspotchannel</a><a href="${rel(from, l, 'partners')}">${esc(T.nav_partners)}</a><a href="https://jeremstyke.github.io/grampedia/${['fr', 'es', 'pt', 'ru'].includes(l) ? l + '/' : ''}">📚 GramPedia</a><a href="https://github.com/jeremstyke/adspot">GitHub</a></nav></div>
 <div class="langs">${all}</div>
 <div class="by">AdSpot · ${esc(T.footer_rights)} · by <a href="https://t.me/jeremstyke">@jeremstyke</a></div>
 </div></footer>`;
