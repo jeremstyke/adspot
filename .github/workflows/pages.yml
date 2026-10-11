@@ -30,7 +30,7 @@ jobs:
       - name: Render the images
         run: |
           mkdir -p _site/img
-          for f in og insideads earnlinks bothunt; do
+          for f in og insideads earnlinks bothunt whowins; do
             google-chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars \
               --force-device-scale-factor=1 --window-size=1200,630 --virtual-time-budget=6000 \
               --screenshot="$PWD/_site/img/$f.png" "file://$PWD/img-src/$f.html"
