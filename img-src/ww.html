@@ -1,0 +1,47 @@
+<!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&display=block" rel="stylesheet"><style>
+html,body{margin:0;width:1200px;height:630px;overflow:hidden}
+body{font-family:"Inter","Segoe UI",Arial,sans-serif;color:#fff;position:relative;background:#03341a}
+.bg{position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 80px,transparent 80px 160px),radial-gradient(760px 520px at 85% 50%,var(--a2),transparent 70%),linear-gradient(135deg,var(--a0),var(--a1) 60%)}
+.pitch{position:absolute;right:-120px;top:65px;width:500px;height:500px;border:4px solid rgba(255,255,255,.10);border-radius:50%}
+.w{position:absolute;left:80px;top:78px;width:760px}
+.tag{display:inline-flex;align-items:center;gap:12px;padding:10px 22px;border-radius:999px;background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.22);font-weight:800;font-size:24px;letter-spacing:2px}
+.tag b{color:#ffd23f}
+h1{font-size:104px;line-height:.98;margin:30px 0 0;letter-spacing:-3px;font-weight:900}
+.sub{margin-top:18px;font-size:34px;font-weight:700;color:rgba(255,255,255,.82)}
+.pills{position:absolute;left:80px;bottom:70px;display:flex;gap:16px}
+.p{padding:16px 30px;border-radius:18px;font-size:30px;font-weight:900;letter-spacing:1px;background:#fff;color:#0d2a18;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.p.d{background:#ffd23f}
+.logo{position:absolute;right:60px;top:110px;width:400px;height:400px}
+.f{position:absolute;right:70px;bottom:52px;font-size:24px;font-weight:700;color:rgba(255,255,255,.7)}
+</style></head><body>
+<div class="bg"></div><div class="pitch"></div>
+<div class="w"><div class="tag"><b>WHO WINS?</b> MATCH PREDICTION</div><h1 id="n">Premier League</h1><div class="sub">Who wins? Pick now, 3 pts if you are right.</div></div>
+<div class="pills"><div class="p">HOME</div><div class="p d">DRAW</div><div class="p">AWAY</div></div>
+<svg class="logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <radialGradient id="ball" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="#ffffff"/><stop offset=".7" stop-color="#eef2f6"/><stop offset="1" stop-color="#c9d3dd"/></radialGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe066"/><stop offset="1" stop-color="#ffb000"/></linearGradient>
+  <clipPath id="c"><circle cx="92" cy="104" r="62"/></clipPath>
+  <filter id="sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000" flood-opacity=".45"/></filter>
+ </defs>
+ <g filter="url(#sh)">
+  <circle cx="92" cy="104" r="62" fill="url(#ball)"/>
+  <g clip-path="url(#c)" fill="#1d2433">
+   <polygon points="92,80 115,96 106,123 78,123 69,96"/><polygon points="92,32 108,42 102,60 82,60 76,42"/>
+   <polygon points="150,84 160,100 152,120 136,112 136,92"/><polygon points="34,84 48,92 48,112 32,120 24,100"/>
+   <polygon points="62,150 80,146 88,162 74,178 56,168"/><polygon points="122,150 128,168 110,178 96,162 104,146"/>
+  </g>
+  <g clip-path="url(#c)" stroke="#1d2433" stroke-width="3" fill="none" opacity=".55"><path d="M92 80V60M115 96l21-4M106 123l12 25M78 123l-12 25M69 96l-21-4"/></g>
+  <circle cx="92" cy="104" r="62" fill="none" stroke="#9fb0c0" stroke-width="2"/>
+ </g>
+ <g filter="url(#sh)"><circle cx="148" cy="54" r="34" fill="url(#gold)" stroke="#fff" stroke-width="5"/>
+  <text x="148" y="70" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="46" fill="#1d2433">?</text></g>
+</svg>
+<div class="f">t.me/whowinsfootball</div>
+<script>
+var L={CL:['Champions League','#06103d','#13307e','#4f7dff88'],PL:['Premier League','#1f0a33','#3d195b','#a855f788'],PD:['La Liga','#3a0610','#8a1020','#ff4d5e88'],SA:['Serie A','#04223d','#0a4f8a','#2fa8ff88'],BL1:['Bundesliga','#2a0606','#7a0d0d','#ff3b3b88'],FL1:['Ligue 1','#0a1530','#132a5e','#dae02588'],DED:['Eredivisie','#3a1604','#8a3a0a','#ff8a2a88'],PPL:['Primeira Liga','#03241a','#0a5a3a','#2ee59d88']};
+var c=(location.search.match(/c=(\w+)/)||[])[1]||'PL',v=L[c]||L.PL;
+document.getElementById('n').textContent=v[0];
+var s=document.body.style;s.setProperty('--a0',v[1]);s.setProperty('--a1',v[2]);s.setProperty('--a2',v[3]);
+</script>
+</body></html>
